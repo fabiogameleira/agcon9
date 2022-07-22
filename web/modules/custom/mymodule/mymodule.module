@@ -1,0 +1,85 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\paragraphs\Entity\Paragraph;  
+
+function mymodule_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.mymodule':
+      $output = '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Module - Importar paragraphs com feeds.') . '</p>';
+      return $output;
+  }
+}
+
+/*
+function ymodule_views_pre_render(\Drupal\views\ViewExecutable $view) {
+  if ($view->id() == "view_id" ) {
+    $image_style_id = 'my_responsive_image_style';
+
+    $style = ResponsiveImageStyle::load($image_style_id);
+    if (!empty($style)) {
+      $image_field = $view->field['field_news_image'];
+      $image_field->options['type'] = 'responsive_image';
+      $image_field->options['settings']['responsive_image_style'] = $image_style_id;
+    }
+  }
+}*/
+
+/**
+ * Implements hook_ENTITY_TYPE_insert() for 'paragraph'.
+ */
+
+function mymodule_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
+  
+  $paragraph = $entity;
+  //$parent_type = $paragraph->parent_type->value;
+  //$parent_field_name = $paragraph->parent_field_name->value;
+  if (isset($paragraph->parent_id->value)) {
+		$parent_id = $paragraph->parent_id->value;
+		$id = $paragraph->id();
+		//dpm('node_id: '. $parent_id . ' paragraph_id -> '. $id);
+		//dpm('parent_type: '. $parent_type . ' | parent_field_name-> '. $parent_field_name);
+		// carregar o node
+		// Adicionar o relacionamento com o paragrafo
+	  if (isset($parent_id)) {  
+		$node = \Drupal\node\Entity\NODE::load($parent_id);
+		if ($node) {
+		   $titulo = $node->title->getValue()['0']['value']; 
+		   $nid = $node->nid->getValue()['0']['value'];
+			  //dpm($paragraph->id->value);
+			  //dpm($paragraph->uuid->value);
+			  //dpm($paragraph->type->target_id);
+			  //dpm($paragraph->parent_id->value);		  
+			  //dpm($paragraph->field_item->value);
+			  //dpm($paragraph->field_tempo->value);
+			  //dpm($paragraph->field_anexos);
+			  //$linha = $linha .' | '. $paragraph->field_tempo;
+			  //$linha = $paragraph->field_anexos;
+			  //FieldItemList
+			  //dpm($linha);
+		  //dpm($nid . ' - '.$titulo);
+		  // Check if product already has a reference to this paragraph.
+		  if (isset($node->field_pauta)) {
+			  foreach ($node->field_pauta as $item) {
+				if ($item->target_id == $paragraph->id()) {
+					  //Paragraph found. Abort.
+					  //return;
+					  //dpm($nid);
+					  //dpm($paragraph->field_arquivo->uri);
+				} else 
+				{
+				  $node->field_pauta[] = $paragraph;
+				  $node->save();
+				}
+			  }
+		  } else {
+				$node->field_pauta[] = $paragraph;
+				$node->save();
+		  }
+		}
+	  }
+   }
+}

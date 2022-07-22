@@ -1,0 +1,126 @@
+/* DESTAQUE - PAGINA DE NOTICIAS e PÁGINA BASICA*/
+
+.region-noticia-destaque h2.block-title,
+.region-noticia-destaque .field--name-field-termo {
+    font-size: 2em;
+    padding-left: 0;
+    height: 70px;
+    vertical-align: middle;
+    text-transform: initial;
+    font-weight: 900;
+    margin-bottom: 70px;
+}
+
+.noticias-destaque h2,
+.noticias-destaque h3,
+.noticias-destaque a,
+.noticias-destaque p,
+.paginabasica-destaque h2,
+.paginabasica-destaque h3,
+.paginabasica-destaque a,
+.paginabasica-destaque p,
+.region-noticia-destaque .field--name-field-termo
+
+ {
+    color: #fff !important;
+}
+
+.noticias-destaque h2,
+.paginabasica-destaque h2 {
+    font-size: 2em ;
+    font-weight: 900 ;
+    line-height: 37px ;
+    text-decoration: none ;
+}
+
+@media (max-width: 468px) {
+    .noticias-destaque h2,
+    .paginabasica-destaque h2 {
+        font-size: 1.3em;
+}
+}
+
+.noticias-destaque .views-row,
+.paginabasica-destaque .views-row {
+	flex: unset !important;
+    width: unset !important;
+    min-width: unset !important;
+}
+
+.noticias-destaque,
+.paginabasica-destaque  {
+    padding-top: 10px;
+}
+
+/* LISTA DE NOTICIAS */
+
+.field--name-node-title h2,
+.field--name-node-title a {
+	color: #161516;
+}
+
+
+.noticias img {
+	
+}
+
+.noticias .field--type-image img {
+    margin: 0;
+}
+
+
+/* VIEW NOTÍCIAS */
+
+.noticias .node-noticia {
+	display: flex;
+}
+
+.noticias .group-left {
+	float: left;
+    width: 70%;
+	margin: auto 0;
+}
+.noticias .group-right {
+	float: right;
+    margin: auto 0 auto auto;
+}
+
+.noticias .views-row {
+	min-height: 535px;
+}
+
+.noticias .node .field--type-image {
+	float: none;
+    margin: 0;
+}
+/* IMAGEM DA CAPA NOTICIAS */
+
+#header-note.img-capa-noticias {
+	background-image: url(../../../../default/files/field/image/capa/img-capa-noticias.png);
+    height: 530px;
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#header-note.img-capa-noticias {
+    height: 530px;
+}
+
+.page-taxonomy-term-3 .views-row {
+	flex: 0 0 auto;
+    width: 33.33333333%;
+	/*min-height: 535px*/
+}
+
+@media (max-width: 468px) {
+    .page-taxonomy-term-3 .views-row {
+        flex: 0 0 auto;
+        width: 100%;
+        margin-bottom: 70px;
+    }
+}
+.field--name-node-post-date.field--label-inline {
+	float: left;
+    margin-right: 10px;
+}
