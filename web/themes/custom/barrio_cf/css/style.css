@@ -394,6 +394,13 @@ a.navbar-brand  {
     color: #161516
 }
 
+@media (max-width: 420px) {
+    a.navbar-brand  {
+        font-size: 1em;
+    }
+}
+
+
 a.navbar-brand img {
     margin-right: 20px;
 }
@@ -405,24 +412,6 @@ a.navbar-brand img {
     box-shadow: unset;
 }
 
-/*
-ul.nav.navbar-nav {
-	background-image: url(../image/icon-menu-cor.png);
-	background-repeat: no-repeat;
-	background-position-y: 50%;
-	background-position-x: 50%;
-}*/
-
-/*
-.nav.navbar-nav > li > a {
-	color: transparent;
-}
-.nav.navbar-nav > li > a:hover, .nav.navbar-nav > li > a:focus {
-    background-color: unset	;
-	color: transparent;
-}
-
-*/
 #block-cf-page-title {
 	/*padding-top: 40px;*/
 }
