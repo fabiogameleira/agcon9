@@ -1,9 +1,8 @@
 ﻿/* Agenda */
 
 .path-frontpage .site-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+
+
 }
 
 .user-logged-in.path-frontpage .site-footer {
@@ -610,7 +609,26 @@ rtical-tab-button.first.last.active.selected {
 	width: 12em;
 }
 
-.feeds-file-upload .form-file {
+.feeds-file-upload .f.orm-file {
     width: 500px !important;
 }
 
+.table-striped>tbody>tr:nth-of-type(odd) {
+    --bs-table-accent-bg: unset;
+    color: initial;
+    background-color: #fff;	
+}
+
+.paragraph-type-title.js-form-wrapper.form-wrapper {
+    visibility: hidden !important;
+}
+
+thead > tr {
+    border-bottom: unset;
+}
+
+table tr th {
+    color: #666;
+    border-bottom-style: none;
+    background-color: unset !important;
+}

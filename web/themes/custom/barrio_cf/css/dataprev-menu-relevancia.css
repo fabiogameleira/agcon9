@@ -13,7 +13,7 @@
 @media (max-width: 480px) {
 	#block-menurelevanciabranco,
 	#block-menurelevancia {
-	  display: none;	
+	  /*display: none;	*/
 	}
 }
 

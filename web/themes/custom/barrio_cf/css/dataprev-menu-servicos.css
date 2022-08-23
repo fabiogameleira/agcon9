@@ -32,3 +32,19 @@
  {
     color: #fff;
 }
+
+/* EXCLUSIVO PARA AGENDAS DOS CONSELHEIROS*/
+
+@media (max-width: 480px) {
+    .menu--menu-servicos ul.nav {
+        justify-content: center;
+        border-top: 1px solid #ccc;
+    }
+
+    .menu--menu-servicos .nav-item a:before, .menu--menu-servicosbranco .nav-item a:before {
+        font-size: 1em;
+        display: block;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+}
